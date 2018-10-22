@@ -1,20 +1,47 @@
-const React = require('react');
+import React, { Component } from 'react';
+import PostsList from '../components/postLists';
+class PostsPage extends Component {
 
-import {
-  NavLink
-} from 'react-router-dom';
 
-const Posts = (props) => (<div>
-  React Routing
-    <ul>
+   constructor(props){
+    super(props);
+    this.state={
+      postsCounter:0,
+      posts:[{
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+    "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "eum et est occaecati",
+    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+  }]
+   }
 
-      {props.posts.map((post, index) =>
 
-      <li key={post.slug}><NavLink to={`/posts/${post.slug}`} >{post.title}</NavLink></li>
-      )}
+   }
 
-  </ul>
-</div>
-)
+  render() {
+    return (
+      <PostsList posts={this.state.posts}></PostsList>
+    );
+  }
 
-export default Posts;
+}
+
+export default PostsPage;

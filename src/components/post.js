@@ -1,11 +1,15 @@
-const React = require('react')
+import React from 'react';
+import PropTypes from 'prop-types';
 
 
-const Post = ({ match }) => (
-  <div>
-    <h3>{match.params.id}</h3>
-  </div>
-)
+const Post = ({post}) => (
+  <div >{post.title?post.title:'i have no title'} <span>  delete post</span></div>
+);
 
+
+// Post.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   clickFUn:PropTypes.Fun.isRequired
+// };
 
 export default Post;
