@@ -9,8 +9,8 @@ const title = 'My Minimal React Webpack Babel Setup';
 ReactDOM.render(
   <Provider store={store} >
 
-<App/>
-</Provider>,
+    <App/>
+    </Provider>,
   document.getElementById('app')
 );
 
